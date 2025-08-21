@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp
+  name: gateway
   labels:
-    app: myapp
+    app: gateway
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: myapp
+      app: gateway
   template:
     metadata:
       labels:
-        app: myapp
+        app: gateway
     spec:
       containers:
-      - name: myapp
-        image: docker.io/yourusername/myapp:latest
+      - name: gateway
+        image: docker.io/hoanghiep4298shop/gateway:latest
         ports:
         - containerPort: 3000
